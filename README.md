@@ -85,5 +85,4 @@ Elle met en scène une enfant portant un masque à oxygène, sur fond de polluti
 
 ---
 
-## 📁 Structure du projet
 
