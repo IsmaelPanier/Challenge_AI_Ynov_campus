@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faits - Respirer</title>
+    <link rel="stylesheet" href="style.css"> <!-- Si votre CSS est séparé, sinon intégrez le style comme dans index.html -->
+    <style>
+        body {
+            background-color: #1e5631;
+            color: #e6dcc6;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #0e3320;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: #e6dcc6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .fact-box {
+            background-color: #0e3320;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .fact-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .fact-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e6dcc6;
+        }
+
+        .fact-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #0e3320;
+            padding: 2rem;
+            text-align: center;
+            color: #ccc;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RESPIRER</div>
+        <nav>
+            <a href="index.html">ACCUEIL</a>
+            <a href="agir.html">AGIR</a>
+            <a href="index.html#newsletter">S'ENGAGER</a>
+            <a href="index.html#about">À PROPOS</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Les faits qui nous poussent à agir</h1>
+        <div class="fact-grid">
+            <div class="fact-box">
+                <h2>🌍 +2°C = Danger</h2>
+                <p>Dépasser les 2°C de réchauffement pourrait entraîner des points de bascule irréversibles comme la fonte totale de la calotte glaciaire du Groenland.</p>
+            </div>
+            <div class="fact-box">
+                <h2>🔥 Canicules plus fréquentes</h2>
+                <p>Les vagues de chaleur deviennent 5 fois plus probables avec le réchauffement actuel, mettant en danger les plus vulnérables.</p>
+            </div>
+            <div class="fact-box">
+                <h2>💨 Air intérieur toxique</h2>
+                <p>L’air que nous respirons à l’intérieur est jusqu’à 5 fois plus pollué que celui de l’extérieur, selon l’ADEME.</p>
+            </div>
+            <div class="fact-box">
+                <h2>🌫️ Particules fines</h2>
+                <p>Les PM2.5 pénètrent profondément dans les poumons et causent des maladies respiratoires, cardiovasculaires et neurologiques.</p>
+            </div>
+            <div class="fact-box">
+                <h2>👶 Enfants vulnérables</h2>
+                <p>Un enfant sur 10 dans le monde est atteint d’asthme lié à la pollution de l’air, surtout dans les zones urbaines.</p>
+            </div>
+            <div class="fact-box">
+                <h2>⛽  Subsidies fossiles</h2>
+                <p>Les subventions aux énergies fossiles représentent encore plus de 7 000 milliards $ par an, freinant la transition écologique.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Respirer - Un Avenir Durable. Ensemble, pour un monde respirable.</p>
+    </footer>
+</body>
+</html>

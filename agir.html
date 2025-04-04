@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agir - Respirer: Un Avenir Durable</title>
+    <style>
+        :root {
+            --primary-green: #1e5631;
+            --light-beige: #e6dcc6;
+            --dark-green: #0e3320;
+            --accent-green: #4a7856;
+            --white: #ffffff;
+            --light-green: #67a57d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-green);
+            color: var(--light-beige);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: var(--light-beige);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        .page-header {
+            background-color: var(--dark-green);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .action-categories {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            background-color: var(--accent-green);
+        }
+
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+        }
+
+        .category-button {
+            background-color: var(--dark-green);
+            color: var(--light-beige);
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .category-button:hover, .category-button.active {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .action-item {
+            background-color: var(--dark-green);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .action-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .action-image {
+            height: 200px;
+            background-color: var(--light-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action-image-placeholder {
+            font-size: 4rem;
+            color: var(--dark-green);
+        }
+
+        .action-content {
+            padding: 1.5rem;
+        }
+
+        .action-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .difficulty {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty-label {
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+
+        .difficulty-dots {
+            display: flex;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: var(--primary-green);
+        }
+
+        .dot.active {
+            background-color: var(--light-beige);
+        }
+
+        .impact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-label {
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+
+        .impact-level {
+            color: var(--light-beige);
+            font-weight: 600;
+        }
+
+        .action-button {
+            display: inline-block;
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: var(--white);
+        }
+
+        .resources-section {
+            background-color: var(--accent-green);
+            padding: 4rem 2rem;
+        }
+
+        .resources-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .resources-title {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background-color: var(--dark-green);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-beige);
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .resource-description {
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .resource-link {
+            color: var(--light-beige);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--light-beige);
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+
+        .resource-link:hover {
+            color: var(--white);
+            border-bottom-color: var(--white);
+        }
+
+        .community-section {
+            padding: 4rem 2rem;
+        }
+
+        .community-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .community-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .community-map {
+            max-width: 1000px;
+            height: 400px;
+            margin: 0 auto 3rem auto;
+            background-color: var(--accent-green);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-placeholder {
+            font-size: 1.5rem;
+        }
+
+        .community-actions {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pledge-form {
+            max-width: 500px;
+            margin: 3rem auto;
+            background-color: var(--dark-green);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-button {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .form-button:hover {
+            background-color: var(--white);
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--light-beige);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            color: var(--light-beige);
+            text-decoration: none;
+            margin-top: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-to-home:hover {
+            color: var(--white);
+        }
+
+        .back-arrow {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
+
+            .category-nav {
+                flex-direction: column;
+            }
+
+            .category-button {
+                width: 100%;
+                margin: 0.3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RESPIRER</div>
+        <nav>
+            <a href="./faits.html">FAITS</a>
+            <a href="./agir.html">AGIR</a>
+            <a href="./segagement.html">S'ENGAGER</a>
+            <a href="#about">À PROPOS</a>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1 class="page-title">AGIR POUR UN AVENIR RESPIRABLE</h1>
+        <p class="page-subtitle">Découvrez des actions concrètes pour lutter contre la pollution de l'air et le changement climatique, à votre échelle et collectivement.</p>
+    </section>
+
+    <section class="action-categories">
+        <div class="category-nav">
+            <button class="category-button active" data-target="individual">Actions individuelles</button>
+            <button class="category-button" data-target="collective">Actions collectives</button>
+            <button class="category-button" data-target="transports">Transports</button>
+            <button class="category-button" data-target="energie">Énergie</button>
+            <button class="category-button" data-target="consommation">Consommation</button>
+        </div>
+    </section>
+
+    <section class="content-section" id="individual">
+        <div class="section-container">
+            <h2 class="section-title">ACTIONS INDIVIDUELLES</h2>
+            <p>Chaque geste compte. Découvrez comment vous pouvez réduire votre empreinte carbone et lutter contre la pollution de l'air au quotidien.</p>
+            
+            <div class="action-grid">
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">🚲</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Privilégier les mobilités douces</h3>
+                        <p class="action-description">Optez pour le vélo, la marche, ou les transports en commun pour vos déplacements quotidiens.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Élevé</span>
+                        </div>
+                        <a href="#" class="action-button">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">🔋</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Réduire sa consommation d'énergie</h3>
+                        <p class="action-description">Diminuez votre consommation d'électricité à la maison et privilégiez les appareils économes en énergie.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Moyen</span>
+                        </div>
+                        <a href="#" class="action-button">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">🥕</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Adopter une alimentation durable</h3>
+                        <p class="action-description">Réduisez votre consommation de viande et privilégiez les produits locaux et de saison.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Élevé</span>
+                        </div>
+                        <a href="#" class="action-button">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">♻️</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Réduire ses déchets</h3>
+                        <p class="action-description">Minimisez vos déchets en évitant les produits à usage unique et en privilégiant le réutilisable.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Moyen</span>
+                        </div>
+                        <a href="#" class="action-button">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="collective" style="display: none;">
+        <div class="section-container">
+            <h2 class="section-title">ACTIONS COLLECTIVES</h2>
+            <p>L'union fait la force. Découvrez comment vous engager collectivement pour faire bouger les lignes et amplifier votre impact.</p>
+            
+            <div class="action-grid">
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">👥</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Rejoindre une association locale</h3>
+                        <p class="action-description">Engagez-vous auprès d'associations qui agissent concrètement pour l'environnement dans votre région.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Élevé</span>
+                        </div>
+                        <a href="#" class="action-button">Trouver une association</a>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">🌱</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Participer à des projets de reforestation</h3>
+                        <p class="action-description">Contribuez à des initiatives de plantation d'arbres qui aident à purifier l'air et à stocker du carbone.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Très élevé</span>
+                        </div>
+                        <a href="#" class="action-button">Projets près de chez vous</a>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">📢</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Mobiliser votre communauté</h3>
+                        <p class="action-description">Organisez des événements de sensibilisation ou des actions de nettoyage dans votre quartier ou votre ville.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Élevé</span>
+                        </div>
+                        <a href="#" class="action-button">Guide d'organisation</a>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <div class="action-image">
+                        <div class="action-image-placeholder">✍️</div>
+                    </div>
+                    <div class="action-content">
+                        <h3 class="action-title">Interpeller les décideurs</h3>
+                        <p class="action-description">Participez à des pétitions, écrivez à vos élus, ou rejoignez des mouvements citoyens pour influencer les politiques publiques.</p>
+                        <div class="difficulty">
+                            <span class="difficulty-label">Difficulté:</span>
+                            <div class="difficulty-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="impact">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-level">Très élevé</span>
+                        </div>
+                        <a href="#" class="action-button">Outils et modèles de lettres</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources-section" id="resources">
+        <div class="resources-container">
+            <h2 class="resources-title">RESSOURCES UTILES</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3 class="resource-title">Calculateurs d'empreinte carbone</h3>
+                    <p class="resource-description">Évaluez votre impact environnemental personnel et identifiez les domaines où vous pouvez agir en priorité.</p>
+                    <a href="#" class="resource-link">Découvrir les outils</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3 class="resource-title">Guides pratiques</h3>
+                    <p class="resource-description">Consultez nos guides détaillés pour adopter un mode de vie plus durable au quotidien.</p>
+                    <a href="#" class="resource-link">Télécharger les guides</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎥</div>
+                    <h3 class="resource-title">Documentaires et conférences</h3>
+                    <p class="resource-description">Approfondissez vos connaissances sur les enjeux climatiques et les solutions existantes.</p>
+                    <a href="#" class="resource-link">Voir la sélection</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🗺️</div>
+                    <h3 class="resource-title">Carte des initiatives</h3>
+                    <p class="resource-description">Trouvez des projets, associations et initiatives près de chez vous pour agir localement.</p>
+                    <a href="#" class="resource-link">Explorer la carte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-section">
+        <h2 class="community-title">REJOINDRE LE MOUVEMENT</h2>
+        <p class="community-subtitle">Ensemble, nous pouvons faire la différence. Rejoignez notre communauté de citoyens engagés pour un avenir respirable.</p>
+        
+        <div class="community-map">
+            <div class="map-placeholder">Carte des initiatives près de chez vous</div>
+        </div>
+        
+        <div class="community-actions">
+            <p>Partout en France, des citoyens se mobilisent pour défendre leur droit à un air sain. Rejoignez le mouvement et amplifiez votre impact en vous connectant avec d'autres personnes engagées.</p>
+        </div>
+
+        <div class="pledge-form">
+            <h3 class="form-title">PRENEZ VOTRE ENGAGEMENT</h3>
+            <form>
+                <div class="form-group">
+                    <label class="form-label" for="name">Nom</label>
+                    <input type="text" id="name" class="form-input" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="Votre adresse email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="pledge">Votre engagement</label>
+                    <textarea id="pledge" class="form-textarea" placeholder="Décrivez l'action que vous vous engagez à entreprendre..."></textarea>
+                </div>
+                <button type="submit" class="form-button">JE M'ENGAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+            </div>
+            <p class="footer-text">© 2025 Respirer - Un Avenir Durable. Tous droits réservés.</p>
+            <p class="footer-text">Agis maintenant pour un avenir respirable.</p>
+            <a href="index.html" class="back-to-home"><span class="back-arrow">←</span> Retour à l'accueil</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category navigation
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const sections = document.querySelectorAll('.content-section');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show selected section
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+
+            // Animation for action items
+            const actionItems = document.querySelectorAll('.action-item');
+            
+            function checkScroll() {
+                actionItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight * 0.8) {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+
+            // Initialize items as invisible
+            actionItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on load
+        });
+    </script>
+</body>
+</html>

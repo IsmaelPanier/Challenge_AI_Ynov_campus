@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respirer - Un Avenir Durable</title>
+    <style>
+        :root {
+            --primary-green: #1e5631;
+            --light-beige: #e6dcc6;
+            --dark-green: #0e3320;
+            --accent-green: #4a7856;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-green);
+            color: var(--light-beige);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: var(--light-beige);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background-image: linear-gradient(rgba(30, 86, 49, 0.8), rgba(30, 86, 49, 0.8));
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .facts-section {
+            padding: 5rem 2rem;
+            background-color: var(--accent-green);
+        }
+
+        .facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .fact-card {
+            background-color: var(--dark-green);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .fact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-beige);
+        }
+
+        .fact-card p {
+            color: var(--light-beige);
+            opacity: 0.9;
+        }
+
+        .action-section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .action-heading {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .actions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .action-card {
+            padding: 2rem;
+            border: 2px solid var(--light-beige);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .action-card:hover {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+        }
+
+        .action-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .action-link {
+            color: var(--light-beige);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--light-beige);
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+
+        .action-card:hover .action-link {
+            color: var(--dark-green);
+            border-bottom: 2px solid var(--dark-green);
+        }
+
+        .counter-section {
+            background-color: var(--dark-green);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .counter-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .counter-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .counter {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-section {
+            padding: 5rem 2rem;
+            background-color: var(--primary-green);
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .newsletter-input {
+            padding: 0.8rem 1.2rem;
+            width: 60%;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-button {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-button:hover {
+            background-color: var(--white);
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--light-beige);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Animation for mask effect */
+        .mask-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(14, 51, 32, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
+
+        .mask-animation.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mask-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .mask-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mask-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .close-mask {
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RESPIRER</div>
+        <nav>
+            <a href="./faits.html">FAITS</a>
+            <a href="./agir.html">AGIR</a>
+            <a href="./segagement.html">S'ENGAGER</a>
+            <a href="#about">À PROPOS</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>ET SI DEMAIN, RESPIRER DEVENAIT UN LUXE?</h1>
+        <p>La pollution tue. Le dérèglement climatique s'accélère. Il est temps d'agir.</p>
+        <button class="cta-button" id="show-mask">DÉCOUVRIR LA RÉALITÉ</button>
+    </section>
+
+    <section class="facts-section" id="facts">
+        <div class="facts-container">
+            <div class="fact-card">
+                <h3>7 millions</h3>
+                <p>C'est le nombre de décès prématurés annuels dans le monde dus à la pollution de l'air selon l'OMS.</p>
+            </div>
+            <div class="fact-card">
+                <h3>+1.1°C</h3>
+                <p>La température mondiale a déjà augmenté de 1.1°C depuis l'ère préindustrielle, avec des conséquences déjà visibles.</p>
+            </div>
+            <div class="fact-card">
+                <h3>91%</h3>
+                <p>de la population mondiale vit dans des endroits où la qualité de l'air dépasse les limites des directives de l'OMS.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-section">
+        <div class="counter-container">
+            <h2 class="counter-title">NOTRE TEMPS EST COMPTÉ</h2>
+            <div class="counter" id="countdown">7 ANS</div>
+            <p class="counter-description">C'est le temps qui nous reste pour limiter le réchauffement climatique à 1.5°C selon les scientifiques.</p>
+        </div>
+    </section>
+
+    <section class="action-section" id="actions">
+        <h2 class="action-heading">AGIR MAINTENANT</h2>
+        <div class="actions-container">
+            <div class="action-card">
+                <h3>Réduire</h3>
+                <p>Diminuez votre empreinte carbone en réduisant votre consommation d'énergie et de biens.</p>
+                <a href="#" class="action-link">DÉCOUVRIR COMMENT</a>
+            </div>
+            <div class="action-card">
+                <h3>Sensibiliser</h3>
+                <p>Partagez vos connaissances et sensibilisez votre entourage aux enjeux environnementaux.</p>
+                <a href="#" class="action-link">RESSOURCES</a>
+            </div>
+            <div class="action-card">
+                <h3>S'engager</h3>
+                <p>Rejoignez des initiatives locales et participez à des actions collectives pour le climat.</p>
+                <a href="#" class="action-link">TROUVER UNE INITIATIVE</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section" id="newsletter">
+        <div class="newsletter-container">
+            <h2 class="newsletter-title">RESTEZ INFORMÉ</h2>
+            <p>Recevez des informations et des conseils pour agir efficacement face à la crise climatique.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Votre adresse email">
+                <button type="submit" class="newsletter-button">S'ABONNER</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="about">
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="footer-text">© 2025 Respirer - Un Avenir Durable. Tous droits réservés.</p>
+            <p class="footer-text">Agis maintenant pour un avenir respirable.</p>
+        </div>
+    </footer>
+
+    <div class="mask-animation" id="mask-animation">
+        <div class="mask-content">
+            <h2>AVEZ-VOUS DÉJÀ PENSÉ À L'AIR QUE VOUS RESPIREZ?</h2>
+            <p>Chaque jour, nous prenons environ 20 000 respirations. L'air que nous respirons est de plus en plus pollué, mettant notre santé et celle de nos enfants en danger.</p>
+            <p>Si nous n'agissons pas maintenant, respirer un air sain pourrait devenir un privilège réservé aux plus fortunés.</p>
+            <button class="close-mask" id="close-mask">JE COMPRENDS</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mask animation
+            const showMaskBtn = document.getElementById('show-mask');
+            const closeMaskBtn = document.getElementById('close-mask');
+            const maskAnimation = document.getElementById('mask-animation');
+
+            showMaskBtn.addEventListener('click', function() {
+                maskAnimation.classList.add('active');
+            });
+
+            closeMaskBtn.addEventListener('click', function() {
+                maskAnimation.classList.remove('active');
+            });
+
+            // Scroll animation for fact cards
+            const factCards = document.querySelectorAll('.fact-card');
+            
+            function checkScroll() {
+                factCards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (cardTop < windowHeight * 0.8) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+
+            // Initialize cards as invisible
+            factCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on load
+
+            // Countdown animation
+            const countdownElement = document.getElementById('countdown');
+            let years = 7;
+            let months = 0;
+            let days = 0;
+
+            function updateCountdown() {
+                if (days > 0) {
+                    days--;
+                } else {
+                    days = 29;
+                    if (months > 0) {
+                        months--;
+                    } else {
+                        months = 11;
+                        if (years > 0) {
+                            years--;
+                        }
+                    }
+                }
+
+                countdownElement.textContent = `${years} ANS, ${months} MOIS, ${days} JOURS`;
+
+                // If we reach zero, stop the countdown
+                if (years === 0 && months === 0 && days === 0) {
+                    clearInterval(countdownInterval);
+                    countdownElement.textContent = "TEMPS ÉCOULÉ";
+                }
+            }
+
+            // Update every 3 days (sped up for effect)
+            const countdownInterval = setInterval(updateCountdown, 3000);
+            updateCountdown(); // Initial call
+        });
+    </script>
+</body>
+</html>

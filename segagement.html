@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'engager - Respirer</title>
+    <style>
+        :root {
+            --primary-green: #1e5631;
+            --light-beige: #e6dcc6;
+            --dark-green: #0e3320;
+            --accent-green: #4a7856;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-green);
+            color: var(--light-beige);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: var(--light-beige);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .engage-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .engage-card {
+            background-color: var(--dark-green);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .engage-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .engage-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .engage-card p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--light-beige);
+            color: var(--dark-green);
+            padding: 0.6rem 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--white);
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            padding: 2rem;
+            text-align: center;
+            color: #ccc;
+            margin-top: 4rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RESPIRER</div>
+        <nav>
+            <a href="index.html">ACCUEIL</a>
+            <a href="faits.html">FAITS</a>
+            <a href="agir.html">AGIR</a>
+            <a href="#newsletter">S'ENGAGER</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>S'engager pour demain</h1>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+            Il existe mille façons de faire la différence. Que vous soyez étudiant, parent, salarié ou retraité, votre voix compte. Engagez-vous avec des initiatives concrètes.
+        </p>
+
+        <div class="engage-section">
+            <div class="engage-card">
+                <h2>✨ Rejoindre une association locale</h2>
+                <p>Participez à des actions écologiques dans votre quartier : plantations, nettoyages, ateliers citoyens...</p>
+                <a class="btn" href="#">TROUVER UNE ASSOCIATION</a>
+            </div>
+            <div class="engage-card">
+                <h2>📣 Devenir ambassadeur du climat</h2>
+                <p>Sensibilisez vos proches, vos collègues ou votre école aux enjeux climatiques.</p>
+                <a class="btn" href="#">COMMENCER MA FORMATION</a>
+            </div>
+            <div class="engage-card">
+                <h2>🧠 Former et éduquer</h2>
+                <p>Partagez des ressources pédagogiques, organisez des ateliers ou conférences dans votre milieu.</p>
+                <a class="btn" href="#">ACCÉDER AUX RESSOURCES</a>
+            </div>
+            <div class="engage-card">
+                <h2>📅 Participer à un événement</h2>
+                <p>Retrouvez les marches, conférences et événements écologiques proches de chez vous.</p>
+                <a class="btn" href="#">VOIR LE CALENDRIER</a>
+            </div>
+            <div class="engage-card">
+                <h2>✍️ Signer des pétitions</h2>
+                <p>Faites entendre votre voix sur des sujets politiques et environnementaux urgents.</p>
+                <a class="btn" href="#">SIGNER MAINTENANT</a>
+            </div>
+            <div class="engage-card">
+                <h2>🤝 Soutenir financièrement</h2>
+                <p>Faites un don à des associations reconnues qui luttent pour un avenir durable.</p>
+                <a class="btn" href="#">FAIRE UN DON</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Respirer - Un Avenir Durable. Ensemble, pour un monde respirable.</p>
+    </footer>
+</body>
+</html>
